@@ -1,6 +1,7 @@
-from django.contrib import admin
 from django.urls import path, include
+from .views import ToDoList, ToDoDetail
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('list/', ToDoList.as_view()),
+    path('detail/<int:pk>', ToDoDetail.as_view())
 ]
